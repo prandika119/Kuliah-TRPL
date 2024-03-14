@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Faktorial {
+public class FaktorialAndika {
     public static void main(String[] args) {
         Scanner ketik = new Scanner(System.in);
         //  faktorial
@@ -14,7 +14,7 @@ public class Faktorial {
         if (angka == 0) {
             return 1;
         } else {
-            return angka * calculateFactorial(angka - 1); 
+            return angka * calculateFactorial(angka - 1);
         }
     }
 }

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pendaftaran Acara Ramadhan Di Sleman</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .image img {
+        border-radius: 25px;
+        width: 100%;
+      }
+      .image {
+        max-width: 600px;
+        height: 150px;
+        overflow: hidden;
+        display: flex;
+      }
+      p {
+        max-width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="image">
+        <img src="gambar.jpg" alt="Gambar form" width="100%" />
+      </div>
+      <h2>Form pendaftaran Acara Ramadhan</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut cupiditate
+        dolore sit enim iure corrupti! Itaque labore corrupti, explicabo ullam
+        ut culpa maxime fugiat at eligendi dicta quidem id. Reiciendis. Tenetur,
+        dolorum! Delectus, illum quos. Maxime quos magnam unde quae repudiandae
+        omnis dolore et similique fuga ab beatae sit minima suscipit, non
+        maiores. Eum, mollitia porro soluta veritatis dignissimos dolores!
+      </p>
+
+      <!-- Isi form -->
+      <form action="" method="post">
+        <h3>Pendaftaran kajian masjid Al-Hikmah</h3>
+
+        <label for="">Nama</label>
+        <input type="text" />
+        <br />
+
+        <label for="tanggalLahir">Tanggal lahir</label>
+        <input type="date" />
+        <br />
+
+        <label for="">Jenis kelamin</label>
+        <div>
+          <input type="radio" name="kelamin" />Laki-laki
+          <input type="radio" name="kelamin" />perempuan
+        </div>
+        <br />
+
+        <label for="">Alamat email</label>
+        <input type="text" />
+        <br />
+
+        <label for="">No Telepon</label>
+        <input type="number" />
+        <br />
+
+        <label for="">Partisipasi</label>
+        <select name="partisipasi" id="">
+          <option value="" disabled selected></option>
+          <option value="peserta">Peserta</option>
+          <option value="pembicara">Pembicara</option>
+        </select>
+        <br />
+
+        <label for="">Pertanyaan</label>
+        <textarea name="" id="" cols="30" rows="4"></textarea>
+        <br />
+
+        <div>
+          <input type="checkbox" name="" id="" required />Saya sudah mengisi
+          biodata di atas dengan benar
+        </div>
+        <br />
+
+        <label for="">submit</label>
+        <input type="submit" value="Kirim" />
+      </form>
+    </div>
+  </body>
+</html>

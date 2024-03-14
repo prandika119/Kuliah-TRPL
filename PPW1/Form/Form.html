@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #ede7f6;
+      }
+      .form-container {
+        max-width: 650px;
+        margin: auto;
+        .image {
+          height: 150px;
+          overflow: hidden;
+          border-radius: 15px;
+        }
+        .image img {
+          width: auto;
+          height: 400px;
+        }
+        /* figure{
+          max-width:650px ;
+          height: 150px;
+        }
+        .figure img{
+          width: 100%;
+
+        } */
+      }
+      .div-nama,
+      .div-tgl,
+      .kelamin,
+      .telp,
+      .email,
+      .partisipasi,
+      .pertanyaan,
+      .konfirmasi {
+        width: auto;
+        height: 100px;
+        background-color: #fdfefe;
+        margin: 10px;
+        padding: 25px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      input {
+        /* width: 500px; */
+        margin: 10px auto;
+        border: 0;
+      }
+
+      .nama {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body background="pattern.jpg">
+    <div class="form-container">
+      <div class="judul">
+        <div class="image">
+          <img src="gambar.jpg" alt="" />
+        </div>
+        <h2>Form pendaftaran Acara Ramadhan</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+          saepe animi facere alias possimus harum perspiciatis deleniti. Sed,
+          quo sint.
+        </p>
+      </div>
+
+      <form action="">
+        <div class="div-nama">
+          <div class="nama">
+            <label for="">Nama</label>
+          </div>
+          <div class="input">
+            <input type="text" placeholder="Masukan nama" />
+          </div>
+        </div>
+
+        <div class="div-tgl">
+          <div class="name">
+            <label for="">Tanggal Lahir</label>
+          </div>
+          <div class="input">
+            <input type="date" />
+          </div>
+        </div>
+
+        <div class="kelamin">
+          <div class="name">
+            <label for="">Jenis Kelamin</label>
+          </div>
+          <div class="input">
+            <div>
+              <input type="radio" name="kelamin" /><span>Laki-laki</span>
+            </div>
+            <div><input type="radio" name="kelamin" />Perempuan</div>
+          </div>
+        </div>
+
+        <div class="email">
+          <div class="name">
+            <label for="email">Alamat email</label>
+          </div>
+          <div class="input">
+            <input type="email" placeholder="Masukan email" id="email" />
+          </div>
+        </div>
+
+        <div class="telp">
+          <div class="name">
+            <label for="">Nomor telephone</label>
+          </div>
+          <div class="input">
+            <input type="number" placeholder="Masukan nomor" />
+          </div>
+        </div>
+
+        <div class="partisipasi">
+          <div class="name">
+            <label>Partisipasi sebagai</label>
+          </div>
+          <select name="partisipasi">
+            <option value="" disabled selected></option>
+            <option value="peserta">Peserta</option>
+            <option value="pembicara">Pembicara</option>
+          </select>
+        </div>
+
+        <div class="pertanyaan">
+          <div class="name">
+            <label for="">pertanyaan</label>
+          </div>
+          <div class="input">
+            <input type="text" placeholder="Masukan pertanyaan" />
+          </div>
+        </div>
+
+        <div class="konfirmasi">
+          <div class="input">
+            <input type="checkbox" required /> Saya sudah mengisi dengan benar
+          </div>
+          <button type="submit" style="width: 75px">Kirim</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

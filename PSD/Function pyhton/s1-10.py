@@ -14,22 +14,22 @@
 
 #16
 def foo(k):
-    k[0]=3
+    k[0]=1
     return k
-q=[1]
+q=[0]
 print(foo(q))
 print(q)
 
-def foo(k):
-    k=[0]
-    return k
-q=[1]
-print(foo(q))
-print(q)
+# def foo(k):
+#     k=[0]
+#     return k
+# q=[1]
+# print(foo(q))
+# print(q)
 
-def a(b):
-    b = b+[5]
-    return b
-c =[1,2,3,4]
-print(a(c))
-print(c)
+# def a(b):
+#     b = b+[5]
+#     return b
+# c =[1,2,3,4]
+# print(a(c))
+# print(c)
