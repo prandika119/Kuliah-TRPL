@@ -13,6 +13,7 @@ public class Mahasiswa {
          nama = namaMahasiswa;
          nim = nimMahasiswa;
          jumlahBolos = 0;
+         ipk = 3.0;
      }
      void bolehUjian(){
          if(jumlahBolos > 7){
@@ -22,8 +23,9 @@ public class Mahasiswa {
          }
      }
 
-     @ovveride
-    public String toString(){
+
+    @Override
+     public String toString(){
          return  "Nama = " + nama +
                  "\nNIM = " + nim +
                  "\nAngkatan = " + angkatan +

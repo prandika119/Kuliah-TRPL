@@ -7,5 +7,6 @@ public class Main {
         System.out.println(nawal.nama);
         nawal.jumlahBolos = 10;
         nawal.bolehUjian();
+        System.out.println(nawal.toString());
     }
 }

@@ -1,4 +1,4 @@
-package Buku;
+package no_encapsulation;
 
 public class User {
     String nama;
