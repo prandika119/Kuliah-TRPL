@@ -9,6 +9,10 @@ public class Pengguna {
         this.role = role;
     }
 
+    public void setNama(String nama) {this.nama = nama;}
+
+    public void setRole(String role) {this.role = role;}
+
     public String getNama() {
         return nama;
     }
@@ -22,4 +26,4 @@ public class Pengguna {
         return "Nama: " + nama + ", Role: " + role;
     }
 }
-}
+

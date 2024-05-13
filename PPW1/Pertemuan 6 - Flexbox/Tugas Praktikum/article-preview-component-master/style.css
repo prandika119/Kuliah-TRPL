@@ -1,0 +1,68 @@
+body {
+    font-size: 13px;
+    background-color: hsl(210, 46%, 95%);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;}
+  .container {
+    background-color: white;
+    display: flex;
+    margin: 0 100px;
+    min-height: 33vh;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    overflow: hidden;}
+  .content {
+    margin: 0 20px 30px;
+    display: flex;
+    flex-direction: column;}
+  .img-main {
+    min-width: 50%;}
+  .profile {
+    margin: 10px;
+    display: flex;
+    align-items: center;}
+  .img-profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;}
+  .name-date {
+    margin: 0 20px;
+    flex-grow: 2;}
+  .share {
+    flex-grow: 1;
+    align-self: center;
+    border: 0;
+    background-color: white;}
+  h1 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;}
+  .attribution {
+    font-size: 11px;
+    text-align: center;}
+  .attribution a {
+    color: hsl(228, 45%, 44%);}
+
+  @media (min-width: 870px) {
+    .container {
+      flex-wrap: nowrap;}}
+
+  @media (min-width: 1440px) {
+    body {
+      font-size: larger;}
+    .img-profile {
+      width: 75px;
+      height: 75px;
+      border-radius: 100%;}}
+
+  @media (max-width: 480px) {
+    body {
+      font-size: 10px;}
+    .container {
+      margin: 10px;}
+
+    .img-profile {
+      width: 35px;
+      height: 35px;
+      border-radius: 100%;}}

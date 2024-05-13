@@ -1,3 +1,5 @@
+package Materi;
+
 public class Animal {
     int jumlahKaki;
     String warna;

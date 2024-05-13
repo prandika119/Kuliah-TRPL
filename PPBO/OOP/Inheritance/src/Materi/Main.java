@@ -1,3 +1,5 @@
+package Materi;
+
 public class Main {
     public static void main(String[] args) {
         Sheep domba = new Sheep("Putih", 4);

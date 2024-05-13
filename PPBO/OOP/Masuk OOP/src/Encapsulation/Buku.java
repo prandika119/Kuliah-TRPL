@@ -4,16 +4,18 @@ public class Buku {
 
     private String judul;
     private String penulis;
-    private StatusBuku status;
+    private boolean isTersedia;
     private Pengguna peminjam;
     private int lamaPeminjaman;
+    private int stok;
 
-    public Buku(String judul, String penulis) {
+    public Buku(String judul, String penulis, int stok) {
         this.judul = judul;
         this.penulis = penulis;
-        this.status = StatusBuku.TERSEDIA;
+        this.isTersedia = false;
         this.peminjam = null;
-        this.lamaPeminjaman = 0;
+        this.lamaPeminjaman = lamaPeminjaman;
+        this.stok = stok;
     }
 
     public String getJudul() {
@@ -24,8 +26,8 @@ public class Buku {
         return penulis;
     }
 
-    public StatusBuku getStatus() {
-        return status;
+    public boolean getStatus() {
+        return isTersedia;
     }
 
     public Pengguna getPeminjam() {
@@ -36,39 +38,45 @@ public class Buku {
         return lamaPeminjaman;
     }
 
-    public void minjam(Pengguna admin, Pengguna peminjam, int lamaPeminjaman) {
-        if (admin.getRole().equals("Pustakawan") && status == StatusBuku.TERSEDIA) {
-            this.status = StatusBuku.DIPINJAM;
+//    Meminjam Buku
+    public void minjam(Pengguna admin, Pengguna peminjam, String judul, int lamaPeminjaman) {
+        if (!admin.getRole().equals("Pustakawan")){
+            System.out.println("\nPerlu izin pustakawan");
+        } else if (stok<=0) {
+            System.out.println("\nTidak ada stok");
+        } else {
+            this.isTersedia = true;
             this.peminjam = peminjam;
             this.lamaPeminjaman = lamaPeminjaman;
-            System.out.println("Buku " + judul + " berhasil dipinjam oleh " + peminjam.getNama());
-        } else if (!admin.getRole().equals("Pustakawan")) {
-            System.out.println("Perlu izin pustakawan untuk meminjam buku");
-        } else {
-            System.out.println("Buku " + judul + " sedang dipinjam");
+            stok -= 1;
+            System.out.println("\nBuku berhasil dipinjam oleh "+ peminjam.getNama());
         }
     }
 
-    public void kembalikan(Pengguna peminjam) {
-        if (this.peminjam == peminjam) {
-            this.status = StatusBuku.TERSEDIA;
-            this.peminjam = null;
+//    Mengembalikkan Buku
+    public void kembalikan(Pengguna peminjam, String judul) {
+        if (this.peminjam == peminjam && this.judul == judul) {
+            this.isTersedia = true;
+            this.peminjam = peminjam;
             this.lamaPeminjaman = 0;
-            System.out.println("Buku " + judul + " berhasil dikembalikan oleh " + peminjam.getNama());
+            stok += 1;
+            System.out.println("\nBuku " + judul + " berhasil dikembalikan oleh " + peminjam.getNama());
         } else {
-            System.out.println("Pengembalian buku gagal. User tidak terdaftar sebagai peminjam");
+            System.out.println("\nPengembalian buku gagal. User atau buku tidak terdaftar");
         }
     }
 
     @Override
     public String toString() {
         String statusBuku = "";
-        if (status == StatusBuku.TERSEDIA) {
-            statusBuku = "Tersedia";
-        } else if (status == StatusBuku.DIPINJAM) {
-            statusBuku = "Dipinjam oleh " + peminjam.getNama() + " ";
-        }else (){
-            System.out.println("");
+        if (stok>0) {
+            statusBuku = " Tersedia";
+        }else {
+            statusBuku = " Tidak tersedia";
         }
+        return "Judul buku: "+ judul +
+                "\nStatus: "+ statusBuku +
+                "\nStok: "+stok+
+                "\n--------------------";
     }
 }

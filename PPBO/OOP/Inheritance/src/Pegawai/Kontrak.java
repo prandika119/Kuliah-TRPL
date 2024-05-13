@@ -1,2 +1,4 @@
-package Pegawai;public class Kontrak {
+package Pegawai;
+
+public class Kontrak {
 }

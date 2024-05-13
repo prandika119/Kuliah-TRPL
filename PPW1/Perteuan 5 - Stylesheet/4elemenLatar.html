@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img.x1 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+      }
+      img.x2 {
+        position: absolute;
+        left: 0;
+        top: 100;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <p><b>Catatan:</b>Browser jadul tidak mendukung z-index</p>
+    <h1>Sepertinya heading ini terhalang gambar</h1>
+    <img
+      class="x1"
+      src="https://www.petanikode.com/img/cover/java.png"
+      alt=""
+      width="200"
+    <p>
+      Nilai default z-index adalah 0. z-index 1 memiliki prioritas lebih tinggi
+      dari z-index-1
+    </p>
+    <img class="x2" src="https://www.petanikode.com/img/cover/java.png" width="200"
+    <p>Sekarang bandingkan dengan tampilan ini</p>
+  </body>
+</html>

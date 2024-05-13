@@ -1,2 +1,9 @@
-package PACKAGE_NAME;public class Pegawai {
+public class Pegawai {
+    String nama;
+    String status;
+    String jabatan;
+    double gaji;
+
+
 }
+

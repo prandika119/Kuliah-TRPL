@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    justify-content: center;
+    
+}
+.kotakBesar_522305{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+.kotak1_522305{
+    background-color: red;
+}
+.gambarUser_522305{
+    /* position:absolute; */
+    width: 6rem;
+    
+}
+.gambarUGM_522305{
+    width: 10rem;
+
+}

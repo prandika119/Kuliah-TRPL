@@ -1,2 +1,4 @@
-package Pegawai;public class Main {
+package Pegawai;
+
+public class Main {
 }

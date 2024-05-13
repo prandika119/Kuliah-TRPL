@@ -1,0 +1,39 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 1024px;
+    flex-wrap: wrap;
+    
+}
+.kotakBesar_522305{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 15px;
+    margin: 3px
+}
+.kotak1_522305{
+    background-color: red;
+}
+.kotak2_522305{
+    /* background: url("ugm.png"); */
+}
+.gambarUser_522305{
+    
+    width: 6rem;
+    
+}
+.gambarUGM_522305{
+    width: 10rem;
+    position:relative;
+    top: 0;
+    left: 0;
+}
+
+@media (min-width:768px){
+
+}
