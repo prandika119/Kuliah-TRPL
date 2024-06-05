@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Kalkulator</h1>
+        <div class="row my-4" style="height: 6rem;">
+            <div class="col-4"></div>
+            <div class="col-4 border border-2" id="display"></div>
+        </div>
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <div class="row" style="height: 3rem;">
+                    <div class="col-3 bg-warning border rounded d-flex justify-content-center align-items-center" id="ce" >
+                        <a href="#" class="text-decoration-none text-dark" onclick="display('CE')"> CE</a>
+                    </div>
+                    <div class="col-3 bg-warning border rounded d-flex justify-content-center align-items-center" id="c" >
+                        <a href="#" class="text-decoration-none text-dark" onclick="display('C')"  >C</a>
+                    </div>
+                    <div class="col-3 bg-warning border rounded d-flex justify-content-center align-items-center" id="+/-">
+                        <a href="#" class="text-decoration-none text-dark">+/-</a>
+                    </div>
+                    <div class="col-3 bg-warning border rounded d-flex justify-content-center align-items-center" id="bagi" >
+                        <a href="#" class="text-decoration-none text-dark" onclick="display('/')"  >÷</a>
+                    </div>
+                </div>  
+                <div class="row" style="height: 3rem;">
+                    <div class="col-3 border rounded d-flex justify-content-center align-items-center" id="7" >
+                        <a href="#" class="text-decoration-none text-dark" onclick="display('7')"  >7</a>
+                    </div>
+                    <div class="col-3 border rounded d-flex justify-content-center align-items-center" id="8" >
+                        <a href="#" class="text-decoration-none text-dark "onclick="display('8')"  >8</a>
+                    </div>
+                    <div class="col-3 border rounded d-flex justify-content-center align-items-center" id="9" >
+                        <a href="#" class="text-decoration-none text-dark "onclick="display('9')"  >9</a>
+                    </div>
+                    <div class="col-3 bg-warning border rounded d-flex justify-content-center align-items-center" id="kali" >
+                        <a href="#" class="text-decoration-none text-dark "onclick="display('x')"  >×</a>
+                    </div>
+                </div>
+                <div class="row" style="height: 3rem;">
+                    <div class="col-3 border rounded d-flex justify-content-center align-items-center" id="4" >
+                        <a href="#" class="text-decoration-none text-dark "onclick="display('4')"  >4</a>
+                    </div>
+                    <div class="col-3 border rounded d-flex justify-content-center align-items-center" id="5" >
+                        <a href="#" class="text-decoration-none text-dark "onclick="display('5')"  >5</a>
+                    </div>
+                    <div class="col-3 border rounded d-flex justify-content-center align-items-center" id="6" >
+                        <a href="#" class="text-decoration-none text-dark "onclick="display('6')"  >6</a>
+                    </div>
+                    <div class="col-3 bg-warning border rounded d-flex justify-content-center align-items-center" id="kurang" >
+                        <a href="#" class="text-decoration-none text-dark " onclick="display('-')">-</a> 
+                    </div>
+                </div>
+                <div class="row" style="height: 3rem;">
+                    <div class="col-3 border rounded d-flex justify-content-center align-items-center" id="1" >
+                        <a href="#" class="text-decoration-none text-dark "onclick="display('1')"  >1</a>
+                    </div>
+                    <div class="col-3 border rounded d-flex justify-content-center align-items-center" id="2" >
+                        <a href="#" class="text-decoration-none text-dark "onclick="display('2')"  >2</a>
+                    </div>
+                    <div class="col-3 border rounded d-flex justify-content-center align-items-center" id="3" >
+                        <a href="#" class="text-decoration-none text-dark "onclick="display('3')"  >3</a>
+                    </div>
+                    <div class="col-3 bg-warning border rounded d-flex justify-content-center align-items-center" id="tambah" >
+                        <a href="#" class="text-decoration-none text-dark "onclick="display('+')"  >+</a>
+                    </div>
+                </div>
+                <div class="row" style="height: 3rem;">
+                    <div class="col-3 border rounded d-flex justify-content-center align-items-center" id="0" >
+                        <a href="#" class="text-decoration-none text-dark "onclick="display('0')"  >0</a>
+                    </div>
+                    <div class="col-3 border rounded d-flex justify-content-center align-items-center" id="titik" >
+                        <a href="#" class="text-decoration-none text-dark" onclick="display('.')">  . </a>
+                    </div>
+                    <div class="col-6 bg-warning border rounded d-flex justify-content-center align-items-center" id="=" >
+                        <a href="#" class="text-decoration-none text-dark "onclick="display('=')"  >=</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const displayHtml = document.querySelector('#display')
+        let displayContain = ''
+        let operation = []
+        let temp = []
+        let slicing = []
+        const operator= ['+', '-', '/', 'x']
+        getMath()
+        let total = null
+        
+        
+        function display(number){
+            displayContain += number
+            displayHtml.innerHTML = displayContain
+            operation.push(number)
+            console.log(operation)
+            getMath()
+            getTotal()
+            console.log(total)
+            if (number == '='){
+                displayHtml.innerHTML = `<h5>${total} </h5>`
+            } else if (number == 'CE' || number == 'C'){
+                displayHtml.innerHTML = ''
+                displayContain =''
+                operation = []
+                temp = []
+                total = null
+                num = null
+            }
+        }
+        function getMath(){
+            let num = ''
+            for (let i = 0; i < operation.length; i++){
+                
+                if ( ! operator.includes(operation[i])){
+                    num += operation[i]
+                    
+                }else if(operator.includes(operation[i])) {
+                    num = parseInt(num)
+                    temp.push(num)
+                    num = ''
+                    temp.push(operation[i])
+                } 
+            }
+            if (num !== ''){
+                temp.push(parseInt(num))
+            }
+            slicing = temp.slice(-3)
+        }
+        function getTotal (){
+            if (slicing[1] == '+'){
+            total = slicing[0]+slicing[2]
+            }else if (slicing[1] == '-'){
+                total = slicing[0]-slicing[2]
+            }else if (slicing[1]=='x'){
+                total = slicing[0]*slicing[2]
+            }else if (slicing[1]=='/'){
+                total = slicing[0]/slicing[2]
+            } else {
+                total = 'something wrong'
+            }
+        }
+    </script>
+</body>
+</html>
