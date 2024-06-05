@@ -1,4 +1,5 @@
-
+# Mengimport library anytree
+from anytree import Node, RenderTree
 
 class Noode :
     def __init__ (self, karakter, freq, left=None, right = None):
@@ -34,6 +35,8 @@ for i in kalimat :
 c = sorted(frekuensi.items(), key = lambda x:x[1])
 list_data = c
 i = 0
+print(list_data)
+
 while len(c)>1 and i < len(c)-1:
     Noode1 = Noode(c[i][0],c[i][1]) 
     Noode2 = Noode(c[i+1][0], c[i+1][1])
