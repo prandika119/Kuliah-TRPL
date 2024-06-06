@@ -21,12 +21,21 @@ public class Game implements Runnable{
     public void run() {
         double timePerFrame = 1000000000.0/fps;
         long lastFrame = System.nanoTime();
-        long now = System.nanoTime();
+        long now;
+        int frames = 0;
+        long lastCheck = System.currentTimeMillis();
+
         while (true){
             now = System.nanoTime();
             if(now - lastFrame >= timePerFrame){
                 gamePanel.repaint();
                 lastFrame = now;
+                frames++;
+            }
+            if(System.currentTimeMillis() - lastCheck >= 1000){
+                System.out.println("FPS: " + frames);
+                frames = 0;
+                lastCheck = System.currentTimeMillis();
             }
         }
     }
